@@ -67,7 +67,7 @@ dependencies = [
 # Triton is deliberately NOT pinned here. Every PyTorch Linux wheel already
 # pins the exact Triton it was built against -- 3.6.0 for torch 2.10, 3.7.0 for
 # 2.12 -- so naming a version alongside a torch *range* is unsatisfiable by
-# construction. Measured: `torch>=2.7,<2.11` plus `triton==3.7.0` is a
+# construction. Measured: `torch>=2.7,<2.14` plus `triton==3.7.0` is a
 # ResolutionImpossible, because no torch in that range pins 3.7.0.
 #
 # The cuda range stops below 2.14: there the backward pass of the 0.10.0
@@ -83,7 +83,7 @@ cuda = [
 
 # For a driver too old for CUDA 13.
 cuda12 = [
-  "torch>=2.7,<2.11",
+  "torch>=2.7,<2.14",
   "cuequivariance==0.10.0; platform_system == 'Linux' and platform_machine == 'x86_64'",
   "cuequivariance-torch==0.10.0; platform_system == 'Linux' and platform_machine == 'x86_64'",
   "cuequivariance-ops-cu12==0.10.0; platform_system == 'Linux' and platform_machine == 'x86_64'",
